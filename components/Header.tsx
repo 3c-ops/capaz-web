@@ -16,10 +16,10 @@ export function Header() {
           <Image
             alt="capazquesi.cl"
             className="h-9 w-auto sm:h-10 md:h-11"
-            height={52}
+            height={144}
             priority
-            src="/logo-capazquesi.svg"
-            width={260}
+            src="/logo.svg"
+            width={144}
           />
         </a>
 
