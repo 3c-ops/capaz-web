@@ -7,7 +7,7 @@ const navigation = [{ label: 'Cómo trabajamos', href: '#como-trabajamos' }] as 
 export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-brand-border/80 bg-background/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-3.5 md:px-8">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-2.5 md:px-8">
         <a
           aria-label="Ir al inicio"
           className="rounded-xl transition-opacity hover:opacity-80"
@@ -15,11 +15,11 @@ export function Header() {
         >
           <Image
             alt="capazquesi.cl"
-            className="h-8 w-auto sm:h-9"
-            height={43}
+            className="h-9 w-auto sm:h-10 md:h-11"
+            height={52}
             priority
             src="/logo-capazquesi.svg"
-            width={210}
+            width={260}
           />
         </a>
 
