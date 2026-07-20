@@ -10,9 +10,9 @@ export function Footer() {
           <Image
             alt="capazquesi.cl"
             className="h-7 w-auto opacity-90 md:h-8"
-            height={38}
-            src="/logo-capazquesi.svg"
-            width={205}
+            height={144}
+            src="/logo.svg"
+            width={144}
           />
           <p className="mt-2.5 max-w-md text-sm font-light leading-6 text-foreground/60">
             Revisamos contigo alternativas DS1 para comprar tu primera vivienda.

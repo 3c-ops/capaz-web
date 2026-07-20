@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     siteName: 'capazquesi.cl',
     locale: 'es_CL',
     type: 'website',
-    images: [{ url: '/logo-capazquesi.svg', width: 1200, height: 630, alt: 'capazquesi.cl' }],
+    images: [{ url: '/icon.svg', width: 1200, height: 630, alt: 'capazquesi.cl' }],
   },
-  icons: { icon: '/isotipo-capaz.svg', shortcut: '/isotipo-capaz.svg', apple: '/isotipo-capaz.svg' },
+  icons: { icon: '/icon.svg', shortcut: '/icon.svg', apple: '/icon.svg' },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
