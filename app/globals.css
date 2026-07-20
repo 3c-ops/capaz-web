@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f9faf7;
+  --foreground: #1d1d1f;
+  --brand-blue: #1e46df;
+  --brand-navy: #192d60;
+  --brand-border: #e2e3e0;
+  --brand-mint: #c8fdf9;
+  --surface: #ffffff;
+  --surface-muted: #f3f4f0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-border: var(--brand-border);
+  --color-brand-mint: var(--brand-mint);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --font-sans: var(--font-inter);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--brand-blue);
+  color: white;
+}
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--brand-blue) 80%, white);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
