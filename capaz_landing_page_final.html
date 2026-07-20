@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPAZ — Revisemos tu situación antes de decirte que no</title>
+    
+    <!-- Google Fonts - Inter para una tipografía limpia, sobria y de alta legibilidad -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS para el diseño ágil y responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBg: '#F9FAF7',       // Fondo off-white oficial del manual de marca
+                        brandText: '#1D1D1F',     // Texto oscuro de alta legibilidad
+                        brandBlue: '#1E46DF',     // Azul eléctrico principal
+                        brandDarkBlue: '#192D60', // Azul marino profundo para subcabeceras
+                        brandLightBlue: '#809CE9',// Azul suave para pequeños acentos o bordes
+                        brandMint: '#C8FDF9'      // Verde menta pastel de la paleta secundaria
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F9FAF7;
+            color: #1D1D1F;
+        }
+        /* Eliminar scrollbars innecesarias pero mantener suavidad */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9FAF7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E2E3E0;
+            border-radius: 9999px;
+        }
+        /* Ajuste de transiciones limpias y lentas */
+        .fade-in {
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brandBlue selection:text-white">
+
+    <!-- Navegación Minimalista -->
+    <header class="w-full py-6 border-b border-[#E2E3E0] bg-brandBg/95 backdrop-blur-sm sticky top-0 z-50 transition-all">
+        <div class="max-w-6xl mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3 group">
+                <!-- Logotipo Responsivo usando ISO NORMAL_2.png con fallback SVG en caso de desconexión -->
+                <img src="ISO NORMAL_2.png" alt="CAPAZ" class="h-10 w-auto object-contain transition-transform group-hover:scale-[1.02]" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="hidden items-center gap-2" style="display: none;">
+                    <span class="w-7 h-7 rounded-lg bg-brandBlue text-white flex items-center justify-center font-bold text-sm">C?</span>
+                    <span class="text-lg font-semibold tracking-tight text-brandDarkBlue">capazquesi.cl</span>
+                </div>
+                <!-- Sutil indicador de especialización en Proyectos DS1 en el Header -->
+                <span class="hidden sm:inline-block text-[11px] uppercase tracking-wider text-brandText/45 font-medium border-l border-[#E2E3E0] pl-3 ml-1">
+                    Proyectos Subsidio DS1
+                </span>
+            </a>
+            
+            <nav class="flex items-center gap-8">
+                <a href="#como-trabajamos" class="text-sm font-medium text-brandText/70 hover:text-brandBlue transition-colors duration-200">
+                    Cómo trabajamos
+                </a>
+                <a href="https://wa.me/569XXXXXXXX?text=Hola%20CAPAZ%2C%20me%20gustar%C3%ADa%20revisar%20mi%20caso%20para%20comprar%20mi%20primera%20vivienda." 
+                   target="_blank" 
+                   class="hidden md:inline-flex items-center gap-2 text-xs bg-brandBlue text-white px-5 py-2.5 rounded-full font-semibold hover:bg-brandDarkBlue transition-all duration-300">
+                    Iniciar conversación en WhatsApp
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                    </svg>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section class="relative min-h-[75vh] flex items-center justify-center pt-16 pb-24 overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 md:px-12 text-left md:text-center fade-in">
+            <!-- Gran Título Emocional con jerarquía limpia -->
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-light text-[#555557] leading-tight tracking-tight">
+                ¿Te dijeron que no?
+            </h1>
+            <h2 class="text-5xl sm:text-6xl md:text-8xl font-bold text-brandBlue tracking-tight mt-1 mb-10">
+                Capaz que sí.
+            </h2>
+            
+            <!-- Declaración de Intenciones Clave -->
+            <p class="text-lg sm:text-xl md:text-2xl font-light text-brandDarkBlue max-w-2xl mx-auto leading-relaxed mb-12">
+                No prometemos que podremos ayudarte. <br class="hidden sm:inline">
+                Pero sí prometemos <strong class="font-medium text-brandText">revisar tu caso con calma</strong> antes de decirte que no.
+            </p>
+
+            <!-- Acciones Principales con foco en WhatsApp de forma directa -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://wa.me/569XXXXXXXX?text=Hola%20CAPAZ%2C%20me%20gustar%C3%ADa%20revisar%20mi%20caso%20para%20comprar%20mi%20primera%20vivienda." 
+                   target="_blank"
+                   class="w-full sm:w-auto inline-flex justify-center items-center gap-3 bg-brandBlue text-white px-8 py-4.5 rounded-xl font-medium text-lg hover:bg-brandDarkBlue transition-all duration-300 shadow-sm">
+                    Revisemos tu caso por WhatsApp
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                    </svg>
+                </a>
+                <a href="#como-trabajamos" 
+                   class="w-full sm:w-auto inline-flex justify-center items-center bg-transparent text-brandText hover:bg-black/5 px-8 py-4.5 rounded-xl font-medium text-lg border border-[#E2E3E0] transition-all duration-300">
+                    Cómo trabajamos
+                </a>
+            </div>
+
+            <!-- Nota de Confianza Directa e Humana -->
+            <p class="text-xs text-brandText/50 mt-8 tracking-wide">
+                La conversación ocurre directamente por WhatsApp de forma cercana y guiada.
+            </p>
+        </div>
+    </section>
+
+    <!-- Sección 2: El Manifiesto (Redactado con total sobriedad para ser creíble y cercano) -->
+    <section class="py-16 md:py-24 border-t border-b border-[#E2E3E0] bg-white">
+        <div class="max-w-3xl mx-auto px-6 md:px-12 text-left md:text-center">
+            <h3 class="text-2xl sm:text-3xl md:text-4xl font-light text-brandDarkBlue leading-snug mb-6">
+                Muchas personas reciben una respuesta antes de entender completamente en qué etapa están.
+            </h3>
+            <p class="text-base text-brandText/80 leading-relaxed font-light">
+                Nosotros preferimos revisar su situación, ordenar los antecedentes y ver si existe una alternativa compatible con lo que ofrecemos. Comprar tu primera vivienda es un paso importante y merece una mirada detallada y cercana.
+            </p>
+        </div>
+    </section>
+
+    <!-- Sección 3: Transparencia Absoluta -->
+    <section class="py-20 md:py-32 bg-brandBg">
+        <div class="max-w-5xl mx-auto px-6 md:px-12">
+            <div class="text-left mb-16 max-w-2xl">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-brandDarkBlue mb-4">
+                    ¿Hoy con qué podemos ayudarte?
+                </h2>
+                <p class="text-base sm:text-lg font-light text-brandText/70">
+                    Preferimos decir la verdad desde el inicio. Así no te hacemos perder tiempo y nos enfocamos en donde realmente podemos generar una alternativa real para ti.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
+                <!-- Columna: Lo que SÍ hacemos -->
+                <div class="bg-white p-8 md:p-10 rounded-2xl border border-[#E2E3E0] transition-all hover:shadow-sm">
+                    <div class="flex items-center gap-3 mb-8">
+                        <span class="w-8 h-8 rounded-full bg-brandMint text-brandDarkBlue flex items-center justify-center font-bold text-sm">✓</span>
+                        <h4 class="text-xl font-semibold text-brandDarkBlue">Donde sí podemos aportar</h4>
+                    </div>
+                    <ul class="space-y-6 text-brandText/85">
+                        <li class="flex items-start gap-4">
+                            <span class="text-brandBlue mt-1 font-semibold">01.</span>
+                            <div>
+                                <strong class="font-medium block text-brandText">Subsidio DS1 — Tramo 3</strong>
+                                <span class="text-sm text-brandText/60 block mt-0.5">Postulaciones aprobadas para la compra de vivienda.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="text-brandBlue mt-1 font-semibold">02.</span>
+                            <div>
+                                <strong class="font-medium block text-brandText">Subsidio DS1 — Tramo 2</strong>
+                                <span class="text-sm text-brandText/60 block mt-0.5">Orientación integral y análisis de viabilidad financiera.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="text-brandBlue mt-1 font-semibold">03.</span>
+                            <div>
+                                <strong class="font-medium block text-brandText">Compra de primera vivienda para vivir</strong>
+                                <span class="text-sm text-brandText/60 block mt-0.5">Nuestra misión es ayudarte a encontrar tu hogar, no a invertir.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="text-brandBlue mt-1 font-semibold">04.</span>
+                            <div>
+                                <strong class="font-medium block text-brandText">Alternativas vigentes</strong>
+                                <span class="text-sm text-brandText/60 block mt-0.5">Hoy contamos con alternativas en: <strong class="font-medium text-brandText">Quilpué, Villa Alemana y San Bernardo</strong>.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna: Lo que NO hacemos (Honestidad) -->
+                <div class="bg-white p-8 md:p-10 rounded-2xl border border-[#E2E3E0] transition-all hover:shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-8">
+                            <span class="w-8 h-8 rounded-full bg-red-50 text-red-600 flex items-center justify-center font-bold text-sm">✕</span>
+                            <h4 class="text-xl font-semibold text-brandDarkBlue">Donde hoy no podemos ayudarte</h4>
+                        </div>
+                        <ul class="space-y-6 text-brandText/85">
+                            <li class="flex items-start gap-4">
+                                <span class="text-red-500 mt-1 font-semibold">—</span>
+                                <div>
+                                    <strong class="font-medium block text-brandText">DICOM vigente</strong>
+                                    <span class="text-sm text-brandText/60 block mt-0.5">Lamentablemente las condiciones de crédito impiden avanzar si existen deudas activas.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="text-red-500 mt-1 font-semibold">—</span>
+                                <div>
+                                    <strong class="font-medium block text-brandText">Inversión inmobiliaria</strong>
+                                    <span class="text-sm text-brandText/60 block mt-0.5">No trabajamos con inversionistas o multifamiliares.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="text-red-500 mt-1 font-semibold">—</span>
+                                <div>
+                                    <strong class="font-medium block text-brandText">Otros subsidios habitacionales</strong>
+                                    <span class="text-sm text-brandText/60 block mt-0.5">Por el momento estamos enfocados exclusivamente en DS1.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Disclaimer de Inventario/Zonas -->
+                    <p class="text-xs text-brandText/50 mt-8 italic pt-4 border-t border-[#E2E3E0]">
+                        * Los proyectos, precios y disponibilidad pueden cambiar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 4: ¿Cómo funciona? -->
+    <section id="como-trabajamos" class="py-20 md:py-32 bg-white border-t border-[#E2E3E0]">
+        <div class="max-w-4xl mx-auto px-6 md:px-12">
+            <div class="text-left mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-brandDarkBlue">
+                    ¿Cómo funciona nuestra conversación?
+                </h2>
+                <p class="text-base sm:text-lg font-light text-brandText/70 mt-3">
+                    Es extremadamente simple. No hay formularios eternos, llamadas de ventas agresivas ni cobros ocultos.
+                </p>
+            </div>
+
+            <!-- Línea de flujo interactivo minimalista y elegante -->
+            <div class="relative pl-8 md:pl-12 border-l-2 border-[#E2E3E0] space-y-12">
+                <!-- Paso 1 -->
+                <div class="relative">
+                    <span class="absolute -left-[41px] md:-left-[57px] top-0 flex items-center justify-center w-6 h-6 rounded-full bg-brandBg border-2 border-brandBlue text-brandBlue font-bold text-xs">
+                        1
+                    </span>
+                    <h3 class="text-xl font-semibold text-brandDarkBlue mb-2">Nos escribes por WhatsApp</h3>
+                    <p class="text-brandText/70 font-light max-w-xl">
+                        Inicias el contacto con un mensaje simple. Un asistente guiado diseñado para escuchar procesará tus primeras respuestas de manera humana y sin juzgar.
+                    </p>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="relative">
+                    <span class="absolute -left-[41px] md:-left-[57px] top-0 flex items-center justify-center w-6 h-6 rounded-full bg-brandBg border-2 border-brandBlue text-brandBlue font-bold text-xs">
+                        2
+                    </span>
+                    <h3 class="text-xl font-semibold text-brandDarkBlue mb-2">Revisamos tu situación</h3>
+                    <p class="text-brandText/70 font-light max-w-xl">
+                        Analizamos detalladamente tus datos de ahorro, subsidio y situación para verificar alternativas de financiamiento reales.
+                    </p>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="relative">
+                    <span class="absolute -left-[41px] md:-left-[57px] top-0 flex items-center justify-center w-6 h-6 rounded-full bg-brandBg border-2 border-brandBlue text-brandBlue font-bold text-xs">
+                        3
+                    </span>
+                    <h3 class="text-xl font-semibold text-brandDarkBlue mb-2">Entendemos en qué etapa estás</h3>
+                    <p class="text-brandText/70 font-light max-w-xl">
+                        No te apuramos. Resolvemos tus dudas sobre el proceso, el subsidio y los plazos para que te sientas seguro antes de tomar cualquier decisión.
+                    </p>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="relative">
+                    <span class="absolute -left-[41px] md:-left-[57px] top-0 flex items-center justify-center w-6 h-6 rounded-full bg-brandBlue text-white font-bold text-xs">
+                        4
+                    </span>
+                    <h3 class="text-xl font-semibold text-brandDarkBlue mb-2">Si existe una alternativa real...</h3>
+                    <p class="text-brandText/70 font-light max-w-xl">
+                        Agendamos una reunión directa con uno de nuestros especialistas para concretar el plan y acompañarte a buscar tu vivienda. Si no se puede, te explicaremos con honestidad por qué.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 5: Preguntas Frecuentes -->
+    <section class="py-20 md:py-32 bg-brandBg border-t border-b border-[#E2E3E0]">
+        <div class="max-w-4xl mx-auto px-6 md:px-12">
+            <div class="text-left mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-brandDarkBlue">
+                    Respuestas con total claridad
+                </h2>
+                <p class="text-base sm:text-lg font-light text-brandText/70 mt-3">
+                    Aquí no hay letras chicas. Queremos que te sientas tranquilo desde el primer instante.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-white rounded-xl border border-[#E2E3E0] overflow-hidden transition-all duration-200">
+                    <button class="w-full text-left p-6 flex justify-between items-center hover:bg-black/[0.01]" onclick="toggleAccordion(this)">
+                        <span class="font-semibold text-lg text-brandDarkBlue pr-4">¿Me van a prometer que podré comprar?</span>
+                        <span class="text-brandBlue font-light text-2xl transform transition-transform duration-300 pointer-events-none">+</span>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300 ease-out">
+                        <div class="p-6 pt-0 text-brandText/70 font-light border-t border-[#F2F3F0]">
+                            No. Sería irresponsable de nuestra parte prometerte una compra asegurada, ya que la aprobación final siempre depende de factores externos del sistema bancario y del cumplimiento de requisitos. Lo que sí te prometemos es estudiar tu caso al detalle antes de darte un veredicto.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-white rounded-xl border border-[#E2E3E0] overflow-hidden transition-all duration-200">
+                    <button class="w-full text-left p-6 flex justify-between items-center hover:bg-black/[0.01]" onclick="toggleAccordion(this)">
+                        <span class="font-semibold text-lg text-brandDarkBlue pr-4">¿Y si ya me rechazaron?</span>
+                        <span class="text-brandBlue font-light text-2xl transform transition-transform duration-300 pointer-events-none">+</span>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300 ease-out">
+                        <div class="p-6 pt-0 text-brandText/70 font-light border-t border-[#F2F3F0]">
+                            Un rechazo puede depender de distintos antecedentes y criterios. Por eso revisamos tu situación completa para identificar alternativas reales que puedan ser viables.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-white rounded-xl border border-[#E2E3E0] overflow-hidden transition-all duration-200">
+                    <button class="w-full text-left p-6 flex justify-between items-center hover:bg-black/[0.01]" onclick="toggleAccordion(this)">
+                        <span class="font-semibold text-lg text-brandDarkBlue pr-4">¿Qué pasa si hoy no pueden ayudarme?</span>
+                        <span class="text-brandBlue font-light text-2xl transform transition-transform duration-300 pointer-events-none">+</span>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300 ease-out">
+                        <div class="p-6 pt-0 text-brandText/70 font-light border-t border-[#F2F3F0]">
+                            Si hoy no podemos avanzar, te explicaremos qué antecedentes conviene revisar antes de intentarlo nuevamente.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección CTA Final -->
+    <section class="py-24 md:py-36 bg-white relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-brandDarkBlue mb-6">
+                Revisemos tu situación.
+            </h2>
+            <p class="text-lg sm:text-xl font-light text-brandText/70 max-w-xl mx-auto mb-12">
+                La conversación comienza por WhatsApp y puede tomar varios días.
+            </p>
+
+            <a href="https://wa.me/569XXXXXXXX?text=Hola%20CAPAZ%2C%20me%20gustar%C3%ADa%20revisar%20mi%20caso%20para%20comprar%20mi%20primera%20vivienda." 
+               target="_blank"
+               class="inline-flex items-center gap-3 bg-brandBlue text-white px-12 py-5 rounded-xl font-medium text-lg hover:bg-brandDarkBlue transition-all duration-300 shadow-sm">
+                Cuéntanos tu caso por WhatsApp
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer Minimalista -->
+    <footer class="py-12 border-t border-[#E2E3E0] bg-brandBg">
+        <div class="max-w-6xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div class="flex flex-col gap-2">
+                <span class="text-sm font-semibold tracking-tight text-brandDarkBlue flex items-center gap-2">
+                    <span class="w-5 h-5 rounded-md bg-brandBlue text-white flex items-center justify-center text-[10px] font-bold">C?</span>
+                    capazquesi.cl — 2026
+                </span>
+                <p class="text-xs text-brandText/60 max-w-md font-light leading-relaxed">
+                    Te ayudamos en tu proceso de compra de vivienda ds1 conectando con las mejores inmobiliarias.
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:items-end gap-2">
+                <div class="text-xs text-brandText/40 font-light">
+                    Santiago, Chile.
+                </div>
+                <div class="text-xs text-brandText/60 font-light max-w-xs md:text-right leading-relaxed my-1">
+                    ¿Quieres vender tus proyectos DS1 con nosotros? Escríbenos a 
+                    <a href="mailto:contacto@capazquesi.cl" class="text-brandBlue hover:underline font-medium">contacto@capazquesi.cl</a>
+                </div>
+                <a href="#como-trabajamos" class="text-xs text-brandBlue hover:underline">
+                    Ver método de acompañamiento
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Minimalista para FAQ Acordeón Interactiva -->
+    <script>
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('span:last-child');
+            
+            // Cerrar otros acordeones abiertos para limpieza visual
+            document.querySelectorAll('.max-h-0').forEach(item => {
+                if (item !== content && item.style.maxHeight !== '0px' && item.style.maxHeight !== '') {
+                    item.style.maxHeight = '0px';
+                    item.previousElementSibling.querySelector('span:last-child').textContent = '+';
+                    item.previousElementSibling.querySelector('span:last-child').style.transform = 'rotate(0deg)';
+                }
+            });
+
+            // Toggle estado actual
+            if (content.style.maxHeight === '0px' || content.style.maxHeight === '') {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.textContent = '−';
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.style.maxHeight = '0px';
+                icon.textContent = '+';
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+</html>
