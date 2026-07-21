@@ -26,15 +26,41 @@ function TransparencyList({
   );
 }
 
-function CapazEditorialDivider() {
+function TransparencyBrandSignature() {
   return (
-    <div aria-hidden="true" className="mt-12 flex items-center gap-4 md:mt-14">
-      <span className="h-px flex-1 bg-brand-border" />
-      <span className="flex h-9 w-14 items-center justify-center rounded-full border border-brand-blue/15 bg-brand-blue/5 text-sm font-semibold text-brand-blue shadow-[0_10px_30px_rgba(30,70,223,0.06)]">
-        ?
-      </span>
-      <span className="h-px flex-[2] bg-gradient-to-r from-brand-border to-transparent" />
-    </div>
+    <svg
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-x-[-8rem] top-[-10rem] bottom-[-8rem] z-10 hidden overflow-visible mix-blend-multiply md:block"
+      fill="none"
+      preserveAspectRatio="none"
+      viewBox="0 0 1180 720"
+    >
+      <defs>
+        <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="920" id="capaz-soft-signature" width="1420" x="-120" y="-100">
+          <feGaussianBlur stdDeviation="10" />
+        </filter>
+        <radialGradient cx="50%" cy="50%" id="capaz-signature-fade" r="58%">
+          <stop offset="0%" stopColor="var(--brand-blue)" stopOpacity="0.24" />
+          <stop offset="54%" stopColor="var(--brand-blue)" stopOpacity="0.17" />
+          <stop offset="100%" stopColor="var(--brand-blue)" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <g filter="url(#capaz-soft-signature)" opacity="1" transform="rotate(-7 590 360)">
+        <path
+          d="M608 92C474 24 268 43 154 160 6 313 62 579 259 656c142 56 318 19 418-94"
+          stroke="url(#capaz-signature-fade)"
+          strokeLinecap="round"
+          strokeWidth="176"
+        />
+        <path
+          d="M716 118c49-100 216-120 286-39 63 74 24 174-73 229-77 44-103 81-103 162"
+          stroke="url(#capaz-signature-fade)"
+          strokeLinecap="round"
+          strokeWidth="112"
+        />
+        <circle cx="829" cy="600" fill="url(#capaz-signature-fade)" r="63" />
+      </g>
+    </svg>
   );
 }
 
@@ -47,15 +73,16 @@ export function TransparencySection() {
           title="¿Hoy con qué podemos ayudarte?"
         />
 
-        <div className="mt-12 grid gap-5 md:mt-14 md:grid-cols-2 md:gap-6 lg:gap-8">
-          <article className="rounded-[2rem] border border-brand-border bg-white p-7 shadow-[0_22px_70px_rgba(30,70,223,0.10),0_3px_14px_rgba(30,70,223,0.04)] transition duration-300 ease-out hover:-translate-y-1 hover:border-brand-blue/20 hover:shadow-[0_30px_90px_rgba(30,70,223,0.14),0_6px_20px_rgba(30,70,223,0.06)] motion-reduce:hover:translate-y-0 md:p-10">
+        <div className="relative isolate mt-12 grid gap-5 md:mt-14 md:grid-cols-2 md:gap-6 lg:gap-8">
+          <TransparencyBrandSignature />
+          <article className="relative z-0 rounded-[2rem] border border-brand-border bg-white p-7 shadow-[0_18px_60px_rgba(25,45,96,0.05)] transition duration-300 ease-out hover:-translate-y-1 hover:border-brand-blue/20 hover:shadow-[0_24px_70px_rgba(25,45,96,0.08)] motion-reduce:hover:translate-y-0 md:p-10">
             <h3 className="text-xl font-semibold tracking-[-0.02em] text-brand-navy">
               Donde sí podemos aportar
             </h3>
             <TransparencyList items={transparencyItems.canHelp} />
           </article>
 
-          <article className="rounded-[2rem] border border-brand-border bg-white p-7 shadow-[0_22px_70px_rgba(30,70,223,0.09),0_3px_14px_rgba(30,70,223,0.035)] transition duration-300 ease-out hover:-translate-y-1 hover:border-brand-blue/15 hover:shadow-[0_30px_90px_rgba(30,70,223,0.13),0_6px_20px_rgba(30,70,223,0.055)] motion-reduce:hover:translate-y-0 md:p-10">
+          <article className="relative z-0 rounded-[2rem] border border-brand-border bg-white p-7 shadow-[0_18px_60px_rgba(25,45,96,0.05)] transition duration-300 ease-out hover:-translate-y-1 hover:border-foreground/10 hover:shadow-[0_24px_70px_rgba(25,45,96,0.08)] motion-reduce:hover:translate-y-0 md:p-10">
             <h3 className="text-xl font-semibold tracking-[-0.02em] text-brand-navy">
               Donde hoy no podemos ayudarte
             </h3>
