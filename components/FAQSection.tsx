@@ -17,13 +17,13 @@ export function FAQSection() {
           title="Antes de escribirnos"
         />
 
-        <div className="mt-12 space-y-3 md:mt-16">
+        <div className="mt-12 divide-y divide-brand-border border-y border-brand-border md:mt-16">
           {faqs.map((faq) => {
             const isOpen = openQuestion === faq.question;
             const answerId = `faq-answer-${faq.question.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase()}`;
 
             return (
-              <article className="rounded-[1.65rem] border border-brand-border bg-white px-5 py-5 shadow-[0_12px_40px_rgba(25,45,96,0.035)] transition duration-300 ease-out hover:border-brand-blue/20 md:px-6 md:py-6" key={faq.question}>
+              <article className="py-7 md:py-9" key={faq.question}>
                 <button
                   aria-controls={answerId}
                   aria-expanded={isOpen}
@@ -33,17 +33,12 @@ export function FAQSection() {
                   }}
                   type="button"
                 >
-                  <span className="flex items-start gap-4">
-                    <span className="mt-1 hidden h-6 min-w-6 items-center justify-center rounded-full border border-brand-blue/15 bg-brand-blue/5 text-[0.65rem] font-bold text-brand-blue sm:flex">
-                      ?
-                    </span>
-                    <h3 className="text-xl font-semibold leading-tight tracking-[-0.025em] text-brand-navy md:text-2xl">
-                      {faq.question}
-                    </h3>
-                  </span>
+                  <h3 className="text-2xl font-semibold leading-tight tracking-[-0.03em] text-brand-navy md:text-3xl">
+                    {faq.question}
+                  </h3>
                   <span
                     aria-hidden="true"
-                    className={`mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-full border border-brand-border bg-background text-brand-blue transition-transform duration-300 ease-out ${
+                    className={`mt-1 flex size-9 shrink-0 items-center justify-center rounded-full border border-brand-border text-brand-blue transition-transform duration-300 ease-out ${
                       isOpen ? 'rotate-180' : ''
                     }`}
                   >
@@ -58,7 +53,7 @@ export function FAQSection() {
                   id={answerId}
                 >
                   <div className="overflow-hidden">
-                    <p className="ml-0 max-w-3xl pt-5 text-pretty font-light leading-8 text-foreground/68 md:ml-10 md:text-lg md:leading-9">
+                    <p className="max-w-3xl pt-6 text-pretty font-light leading-8 text-foreground/68 md:text-lg md:leading-9">
                       {faq.answer}
                     </p>
                   </div>
