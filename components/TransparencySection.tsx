@@ -30,35 +30,40 @@ function TransparencyBrandSignature() {
   return (
     <svg
       aria-hidden="true"
-      className="pointer-events-none absolute inset-x-[-8rem] top-[-10rem] bottom-[-8rem] z-10 hidden overflow-visible mix-blend-multiply md:block"
+      className="pointer-events-none absolute inset-x-[-34vw] top-[-18rem] bottom-[-16rem] -z-10 hidden overflow-visible mix-blend-multiply md:block"
       fill="none"
       preserveAspectRatio="none"
-      viewBox="0 0 1180 720"
+      viewBox="0 0 1600 920"
     >
       <defs>
-        <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="920" id="capaz-soft-signature" width="1420" x="-120" y="-100">
-          <feGaussianBlur stdDeviation="10" />
+        <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="1260" id="capaz-soft-signature" width="2060" x="-230" y="-170">
+          <feGaussianBlur stdDeviation="26" />
         </filter>
-        <radialGradient cx="50%" cy="50%" id="capaz-signature-fade" r="58%">
-          <stop offset="0%" stopColor="var(--brand-blue)" stopOpacity="0.24" />
-          <stop offset="54%" stopColor="var(--brand-blue)" stopOpacity="0.17" />
+        <radialGradient cx="50%" cy="50%" id="capaz-signature-fade" r="64%">
+          <stop offset="0%" stopColor="var(--brand-blue)" stopOpacity="0.18" />
+          <stop offset="58%" stopColor="var(--brand-blue)" stopOpacity="0.1" />
           <stop offset="100%" stopColor="var(--brand-blue)" stopOpacity="0" />
         </radialGradient>
       </defs>
-      <g filter="url(#capaz-soft-signature)" opacity="1" transform="rotate(-7 590 360)">
+      <g className="capaz-signature-drift" filter="url(#capaz-soft-signature)" opacity="1">
         <path
-          d="M608 92C474 24 268 43 154 160 6 313 62 579 259 656c142 56 318 19 418-94"
+          d="M-118 692C15 846 319 908 539 763c130-86 188-208 164-330"
           stroke="url(#capaz-signature-fade)"
           strokeLinecap="round"
-          strokeWidth="176"
+          strokeWidth="190"
         />
         <path
-          d="M716 118c49-100 216-120 286-39 63 74 24 174-73 229-77 44-103 81-103 162"
+          d="M980 72c150-106 411-65 479 98 57 137-34 270-212 348-116 51-151 112-141 208"
           stroke="url(#capaz-signature-fade)"
           strokeLinecap="round"
-          strokeWidth="112"
+          strokeWidth="132"
         />
-        <circle cx="829" cy="600" fill="url(#capaz-signature-fade)" r="63" />
+        <path
+          d="M1334 965c-112 16-207-35-226-119"
+          stroke="url(#capaz-signature-fade)"
+          strokeLinecap="round"
+          strokeWidth="138"
+        />
       </g>
     </svg>
   );
@@ -73,7 +78,7 @@ export function TransparencySection() {
           title="¿Hoy con qué podemos ayudarte?"
         />
 
-        <div className="relative isolate mt-12 grid gap-5 md:mt-14 md:grid-cols-2 md:gap-6 lg:gap-8">
+        <div className="relative isolate mt-4 grid gap-5 md:mt-6 md:grid-cols-2 md:gap-6 lg:gap-8">
           <TransparencyBrandSignature />
           <article className="relative z-0 rounded-[2rem] border border-brand-border bg-white p-7 shadow-[0_18px_60px_rgba(25,45,96,0.05)] transition duration-300 ease-out hover:-translate-y-1 hover:border-brand-blue/20 hover:shadow-[0_24px_70px_rgba(25,45,96,0.08)] motion-reduce:hover:translate-y-0 md:p-10">
             <h3 className="text-xl font-semibold tracking-[-0.02em] text-brand-navy">
