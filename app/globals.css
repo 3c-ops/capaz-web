@@ -60,3 +60,26 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+@keyframes capaz-signature-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(12px, -10px, 0) rotate(1deg);
+  }
+}
+
+.capaz-signature-drift {
+  animation: capaz-signature-drift 22s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .capaz-signature-drift {
+    animation: none;
+  }
+}
