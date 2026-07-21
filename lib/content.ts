@@ -60,18 +60,28 @@ export const processSteps = [
 
 export const faqs = [
   {
-    question: '¿Me van a prometer que podré comprar?',
+    question: '¿Trabajan con cualquier persona?',
     answer:
-      'No. Sería irresponsable prometer una compra asegurada, porque la aprobación final depende de factores externos del sistema bancario y del cumplimiento de requisitos. Lo que sí prometemos es estudiar tu caso con calma antes de darte una respuesta.',
+      'No. Trabajamos con personas que buscan comprar su primera vivienda para vivir y que tienen una alternativa real de avanzar con subsidio DS1. Si tu caso queda fuera de lo que podemos acompañar, te lo diremos desde el inicio.',
   },
   {
-    question: '¿Y si ya me rechazaron?',
+    question: '¿Qué pasa si ya me rechazaron?',
     answer:
-      'Un rechazo puede depender de distintos antecedentes y criterios. Por eso revisamos tu situación completa para identificar si existe una alternativa real que pueda ser viable.',
+      'No damos por perdido un caso solo por un rechazo anterior. Revisamos qué pudo haber influido, qué antecedentes se pueden ordenar y si hoy existe una opción seria para volver a intentarlo.',
   },
   {
-    question: '¿Qué pasa si hoy no pueden ayudarme?',
+    question: '¿Me van a vender una propiedad?',
     answer:
-      'Si hoy no podemos avanzar, te explicaremos qué antecedentes conviene revisar antes de intentarlo nuevamente.',
+      'Primero queremos entender si comprar es viable para ti. Si hay una alternativa real, recién ahí conversamos sobre proyectos disponibles. Nuestro rol no es empujarte a decidir rápido, sino ayudarte a tomar una decisión informada.',
+  },
+  {
+    question: '¿La conversación tiene costo?',
+    answer:
+      'No. Nuestra asesoría no tiene costo en ninguna conversación. La usamos para conocer tu situación, resolver dudas y ver con honestidad si tiene sentido avanzar a una revisión más completa.',
+  },
+  {
+    question: '¿Qué pasa si finalmente no califico?',
+    answer:
+      'Te explicaremos con claridad por qué no es posible avanzar en este momento y qué puntos podrías revisar antes de intentarlo nuevamente. Preferimos una respuesta honesta a generar expectativas que no dependen de nosotros.',
   },
 ] as const;
