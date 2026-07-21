@@ -30,35 +30,35 @@ function TransparencyBrandSignature() {
   return (
     <svg
       aria-hidden="true"
-      className="pointer-events-none absolute inset-x-[-4.5rem] top-[-6.5rem] bottom-[-5.5rem] -z-10 hidden overflow-visible mix-blend-multiply md:block"
+      className="pointer-events-none absolute inset-x-[-8rem] top-[-10rem] bottom-[-8rem] z-10 hidden overflow-visible mix-blend-multiply md:block"
       fill="none"
       preserveAspectRatio="none"
-      viewBox="0 0 1180 620"
+      viewBox="0 0 1180 720"
     >
       <defs>
-        <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="820" id="capaz-soft-signature" width="1380" x="-100" y="-100">
-          <feGaussianBlur stdDeviation="14" />
+        <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="920" id="capaz-soft-signature" width="1420" x="-120" y="-100">
+          <feGaussianBlur stdDeviation="10" />
         </filter>
         <radialGradient cx="50%" cy="50%" id="capaz-signature-fade" r="58%">
-          <stop offset="0%" stopColor="var(--brand-blue)" stopOpacity="0.17" />
-          <stop offset="54%" stopColor="var(--brand-blue)" stopOpacity="0.12" />
+          <stop offset="0%" stopColor="var(--brand-blue)" stopOpacity="0.24" />
+          <stop offset="54%" stopColor="var(--brand-blue)" stopOpacity="0.17" />
           <stop offset="100%" stopColor="var(--brand-blue)" stopOpacity="0" />
         </radialGradient>
       </defs>
-      <g filter="url(#capaz-soft-signature)" opacity="1" transform="rotate(-7 590 310)">
+      <g filter="url(#capaz-soft-signature)" opacity="1" transform="rotate(-7 590 360)">
         <path
-          d="M548 124C447 72 290 78 202 162 86 273 123 473 274 535c107 44 238 20 315-59"
+          d="M608 92C474 24 268 43 154 160 6 313 62 579 259 656c142 56 318 19 418-94"
           stroke="url(#capaz-signature-fade)"
           strokeLinecap="round"
-          strokeWidth="128"
+          strokeWidth="176"
         />
         <path
-          d="M678 165c34-72 153-88 204-30 48 54 19 131-53 174-58 34-77 62-77 124"
+          d="M716 118c49-100 216-120 286-39 63 74 24 174-73 229-77 44-103 81-103 162"
           stroke="url(#capaz-signature-fade)"
           strokeLinecap="round"
-          strokeWidth="82"
+          strokeWidth="112"
         />
-        <circle cx="753" cy="520" fill="url(#capaz-signature-fade)" r="45" />
+        <circle cx="829" cy="600" fill="url(#capaz-signature-fade)" r="63" />
       </g>
     </svg>
   );
@@ -75,14 +75,14 @@ export function TransparencySection() {
 
         <div className="relative isolate mt-12 grid gap-5 md:mt-14 md:grid-cols-2 md:gap-6 lg:gap-8">
           <TransparencyBrandSignature />
-          <article className="relative rounded-[2rem] border border-brand-border bg-white p-7 shadow-[0_18px_60px_rgba(25,45,96,0.05)] transition duration-300 ease-out hover:-translate-y-1 hover:border-brand-blue/20 hover:shadow-[0_24px_70px_rgba(25,45,96,0.08)] motion-reduce:hover:translate-y-0 md:p-10">
+          <article className="relative z-0 rounded-[2rem] border border-brand-border bg-white p-7 shadow-[0_18px_60px_rgba(25,45,96,0.05)] transition duration-300 ease-out hover:-translate-y-1 hover:border-brand-blue/20 hover:shadow-[0_24px_70px_rgba(25,45,96,0.08)] motion-reduce:hover:translate-y-0 md:p-10">
             <h3 className="text-xl font-semibold tracking-[-0.02em] text-brand-navy">
               Donde sí podemos aportar
             </h3>
             <TransparencyList items={transparencyItems.canHelp} />
           </article>
 
-          <article className="relative rounded-[2rem] border border-brand-border bg-white p-7 shadow-[0_18px_60px_rgba(25,45,96,0.05)] transition duration-300 ease-out hover:-translate-y-1 hover:border-foreground/10 hover:shadow-[0_24px_70px_rgba(25,45,96,0.08)] motion-reduce:hover:translate-y-0 md:p-10">
+          <article className="relative z-0 rounded-[2rem] border border-brand-border bg-white p-7 shadow-[0_18px_60px_rgba(25,45,96,0.05)] transition duration-300 ease-out hover:-translate-y-1 hover:border-foreground/10 hover:shadow-[0_24px_70px_rgba(25,45,96,0.08)] motion-reduce:hover:translate-y-0 md:p-10">
             <h3 className="text-xl font-semibold tracking-[-0.02em] text-brand-navy">
               Donde hoy no podemos ayudarte
             </h3>
