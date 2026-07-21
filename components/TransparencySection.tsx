@@ -30,35 +30,35 @@ function TransparencyBrandSignature() {
   return (
     <svg
       aria-hidden="true"
-      className="pointer-events-none absolute -inset-x-8 -top-20 bottom-[-5rem] -z-10 hidden overflow-visible md:block"
+      className="pointer-events-none absolute -inset-x-10 -top-16 bottom-[-4rem] -z-10 hidden overflow-visible mix-blend-multiply md:block"
       fill="none"
       preserveAspectRatio="none"
       viewBox="0 0 1180 520"
     >
       <defs>
         <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="720" id="capaz-soft-signature" width="1380" x="-100" y="-100">
-          <feGaussianBlur stdDeviation="24" />
+          <feGaussianBlur stdDeviation="18" />
         </filter>
         <radialGradient cx="50%" cy="50%" id="capaz-signature-fade" r="58%">
-          <stop offset="0%" stopColor="var(--brand-blue)" stopOpacity="0.1" />
-          <stop offset="54%" stopColor="var(--brand-blue)" stopOpacity="0.075" />
+          <stop offset="0%" stopColor="var(--brand-blue)" stopOpacity="0.16" />
+          <stop offset="54%" stopColor="var(--brand-blue)" stopOpacity="0.11" />
           <stop offset="100%" stopColor="var(--brand-blue)" stopOpacity="0" />
         </radialGradient>
       </defs>
-      <g filter="url(#capaz-soft-signature)" opacity="0.9">
+      <g filter="url(#capaz-soft-signature)" opacity="1">
         <path
           d="M487 70C290 32 104 95 82 244c-22 149 155 231 360 214 144-12 214-61 254-130 25-42 31-81 18-109-17-38-67-46-112-22-43 22-68 60-70 103"
           stroke="url(#capaz-signature-fade)"
           strokeLinecap="round"
-          strokeWidth="92"
+          strokeWidth="104"
         />
         <path
           d="M610 188c28-58 118-71 153-24 30 41 8 89-42 118-42 24-54 42-54 80"
           stroke="url(#capaz-signature-fade)"
           strokeLinecap="round"
-          strokeWidth="46"
+          strokeWidth="54"
         />
-        <circle cx="667" cy="426" fill="url(#capaz-signature-fade)" r="26" />
+        <circle cx="667" cy="426" fill="url(#capaz-signature-fade)" r="32" />
       </g>
     </svg>
   );
