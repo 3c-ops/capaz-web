@@ -26,6 +26,18 @@ function TransparencyList({
   );
 }
 
+function CapazEditorialDivider() {
+  return (
+    <div aria-hidden="true" className="mt-12 flex items-center gap-4 md:mt-14">
+      <span className="h-px flex-1 bg-brand-border" />
+      <span className="flex h-9 w-14 items-center justify-center rounded-full border border-brand-blue/15 bg-brand-blue/5 text-sm font-semibold text-brand-blue shadow-[0_10px_30px_rgba(30,70,223,0.06)]">
+        ?
+      </span>
+      <span className="h-px flex-[2] bg-gradient-to-r from-brand-border to-transparent" />
+    </div>
+  );
+}
+
 export function TransparencySection() {
   return (
     <section className="px-5 py-20 md:py-32" id="transparencia">
