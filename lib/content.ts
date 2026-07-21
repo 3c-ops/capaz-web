@@ -39,7 +39,7 @@ export const processSteps = [
   {
     title: 'Nos escribes por WhatsApp',
     description:
-      'Inicias el contacto con un mensaje simple. Te guiaremos con calma para entender tus primeras respuestas, sin juzgar.',
+      'Inicias el contacto con un mensaje simple. Te guiaremos con calma para entender tus primeras respuestas.',
   },
   {
     title: 'Revisamos tu situación',

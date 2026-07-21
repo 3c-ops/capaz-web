@@ -1,6 +1,7 @@
 import { FAQSection } from '@/components/FAQSection';
 import { FinalCTA } from '@/components/FinalCTA';
 import { Footer } from '@/components/Footer';
+import { CapazJourneyLine } from '@/components/CapazJourneyLine';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { ManifestSection } from '@/components/ManifestSection';
@@ -17,13 +18,16 @@ export default function Home() {
         Saltar al contenido principal
       </a>
       <Header />
-      <main id="contenido">
-        <Hero />
-        <ManifestSection />
-        <TransparencySection />
-        <ProcessSection />
-        <FAQSection />
-        <FinalCTA />
+      <main className="relative overflow-hidden" id="contenido">
+        <CapazJourneyLine />
+        <div className="relative z-10">
+          <Hero />
+          <ManifestSection />
+          <TransparencySection />
+          <ProcessSection />
+          <FAQSection />
+          <FinalCTA />
+        </div>
       </main>
       <Footer />
     </>
