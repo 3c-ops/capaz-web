@@ -30,35 +30,35 @@ function TransparencyBrandSignature() {
   return (
     <svg
       aria-hidden="true"
-      className="pointer-events-none absolute -inset-x-10 -top-16 bottom-[-4rem] -z-10 hidden overflow-visible mix-blend-multiply md:block"
+      className="pointer-events-none absolute inset-x-[-4.5rem] top-[-6.5rem] bottom-[-5.5rem] -z-10 hidden overflow-visible mix-blend-multiply md:block"
       fill="none"
       preserveAspectRatio="none"
-      viewBox="0 0 1180 520"
+      viewBox="0 0 1180 620"
     >
       <defs>
-        <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="720" id="capaz-soft-signature" width="1380" x="-100" y="-100">
-          <feGaussianBlur stdDeviation="18" />
+        <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="820" id="capaz-soft-signature" width="1380" x="-100" y="-100">
+          <feGaussianBlur stdDeviation="14" />
         </filter>
         <radialGradient cx="50%" cy="50%" id="capaz-signature-fade" r="58%">
-          <stop offset="0%" stopColor="var(--brand-blue)" stopOpacity="0.16" />
-          <stop offset="54%" stopColor="var(--brand-blue)" stopOpacity="0.11" />
+          <stop offset="0%" stopColor="var(--brand-blue)" stopOpacity="0.13" />
+          <stop offset="54%" stopColor="var(--brand-blue)" stopOpacity="0.09" />
           <stop offset="100%" stopColor="var(--brand-blue)" stopOpacity="0" />
         </radialGradient>
       </defs>
-      <g filter="url(#capaz-soft-signature)" opacity="1">
+      <g filter="url(#capaz-soft-signature)" opacity="1" transform="rotate(-7 590 310)">
         <path
-          d="M487 70C290 32 104 95 82 244c-22 149 155 231 360 214 144-12 214-61 254-130 25-42 31-81 18-109-17-38-67-46-112-22-43 22-68 60-70 103"
+          d="M548 124C447 72 290 78 202 162 86 273 123 473 274 535c107 44 238 20 315-59"
           stroke="url(#capaz-signature-fade)"
           strokeLinecap="round"
-          strokeWidth="104"
+          strokeWidth="128"
         />
         <path
-          d="M610 188c28-58 118-71 153-24 30 41 8 89-42 118-42 24-54 42-54 80"
+          d="M678 165c34-72 153-88 204-30 48 54 19 131-53 174-58 34-77 62-77 124"
           stroke="url(#capaz-signature-fade)"
           strokeLinecap="round"
-          strokeWidth="54"
+          strokeWidth="82"
         />
-        <circle cx="667" cy="426" fill="url(#capaz-signature-fade)" r="32" />
+        <circle cx="753" cy="520" fill="url(#capaz-signature-fade)" r="45" />
       </g>
     </svg>
   );
