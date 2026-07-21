@@ -40,8 +40,8 @@ function TransparencyBrandSignature() {
           <feGaussianBlur stdDeviation="14" />
         </filter>
         <radialGradient cx="50%" cy="50%" id="capaz-signature-fade" r="58%">
-          <stop offset="0%" stopColor="var(--brand-blue)" stopOpacity="0.13" />
-          <stop offset="54%" stopColor="var(--brand-blue)" stopOpacity="0.09" />
+          <stop offset="0%" stopColor="var(--brand-blue)" stopOpacity="0.17" />
+          <stop offset="54%" stopColor="var(--brand-blue)" stopOpacity="0.12" />
           <stop offset="100%" stopColor="var(--brand-blue)" stopOpacity="0" />
         </radialGradient>
       </defs>
