@@ -77,7 +77,7 @@ export const faqs = [
   {
     question: '¿La conversación tiene costo?',
     answer:
-      'No. La primera conversación no tiene costo. La usamos para conocer tu situación, resolver dudas iniciales y ver si tiene sentido avanzar a una revisión más completa.',
+      'No. Nuestra asesoría no tiene costo en ninguna conversación. La usamos para conocer tu situación, resolver dudas y ver con honestidad si tiene sentido avanzar a una revisión más completa.',
   },
   {
     question: '¿Qué pasa si finalmente no califico?',
