@@ -20,39 +20,45 @@ export function FAQSection() {
         <div className="mt-12 divide-y divide-brand-border border-y border-brand-border md:mt-16">
           {faqs.map((faq) => {
             const isOpen = openQuestion === faq.question;
+            const answerId = `faq-answer-${faq.question.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase()}`;
 
             return (
-              <details
-                className="group py-7 md:py-9"
-                key={faq.question}
-                onToggle={(event) => {
-                  if (event.currentTarget.open) {
-                    setOpenQuestion(faq.question);
-                  }
-                }}
-                open={isOpen}
-              >
-                <summary
-                  className="flex cursor-pointer list-none items-start justify-between gap-6 text-left focus-visible:outline-brand-blue"
-                  onClick={(event) => {
-                    event.preventDefault();
+              <article className="py-7 md:py-9" key={faq.question}>
+                <button
+                  aria-controls={answerId}
+                  aria-expanded={isOpen}
+                  className="flex w-full cursor-pointer items-start justify-between gap-6 text-left focus-visible:outline-brand-blue"
+                  onClick={() => {
                     setOpenQuestion(isOpen ? null : faq.question);
                   }}
+                  type="button"
                 >
                   <h3 className="text-2xl font-semibold leading-tight tracking-[-0.03em] text-brand-navy md:text-3xl">
                     {faq.question}
                   </h3>
                   <span
                     aria-hidden="true"
-                    className="mt-1 flex size-9 shrink-0 items-center justify-center rounded-full border border-brand-border text-brand-blue transition-transform duration-200 group-open:rotate-180"
+                    className={`mt-1 flex size-9 shrink-0 items-center justify-center rounded-full border border-brand-border text-brand-blue transition-transform duration-300 ease-out ${
+                      isOpen ? 'rotate-180' : ''
+                    }`}
                   >
                     ↓
                   </span>
-                </summary>
-                <p className="mt-6 max-w-3xl text-pretty font-light leading-8 text-foreground/68 md:text-lg md:leading-9">
-                  {faq.answer}
-                </p>
-              </details>
+                </button>
+
+                <div
+                  className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                    isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                  }`}
+                  id={answerId}
+                >
+                  <div className="overflow-hidden">
+                    <p className="max-w-3xl pt-6 text-pretty font-light leading-8 text-foreground/68 md:text-lg md:leading-9">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
+              </article>
             );
           })}
         </div>
